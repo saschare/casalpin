@@ -1,0 +1,10 @@
+<?php if (empty($this->files) && Aitsu_Application_Status :: isEdit()) : ?>
+	<?php return; ?>
+<?php endif; ?>
+<ul class="download">
+<?php foreach ($this->files as $file) : ?>
+		<li><a href="/file/<?php echo $file->idart; ?>/<?php echo $file->filename; ?>" style="text-decoration: none;">
+			<img src="/skin/images/filetypes/<?php echo $file->extension; ?>.gif" border="0">&nbsp;<?php echo $file->name; ?>
+		</a></li>
+<?php endforeach; ?>
+</ul>

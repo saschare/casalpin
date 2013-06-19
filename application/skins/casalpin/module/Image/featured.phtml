@@ -1,0 +1,24 @@
+<!-- Featured -->
+<div class="hide-for-small">
+    <div id="featured" data-orbit>
+        <?php foreach ($this->selectedImages as $image) : ?>
+            <?php
+            $image = (object) $image;
+
+            $this->attributes->alt = $image->subline;
+
+            echo Moraso_Html_Helper_Image::getHtml($image->idart, $image->filename, $this->width, $this->height, $this->render, $this->attributes);
+            ?>
+        <?php endforeach; ?>
+    </div>
+</div>
+
+<div class="show-for-small">
+    <?php
+    $image = (object) $this->selectedImages[0];
+
+    $this->attributes->alt = $image->subline;
+
+    echo Moraso_Html_Helper_Image::getHtml($image->idart, $image->filename, $this->width, $this->height, $this->render, $this->attributes);
+    ?>
+</div>

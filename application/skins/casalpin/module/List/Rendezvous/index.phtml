@@ -1,0 +1,6 @@
+<dl>
+<?php foreach ($this->dates as $date) : ?>
+	<dt><?php echo $date->starttime->get('d.m.y'); ?>, <?php echo $date->starttime->get('H:i'); ?> - <?php echo $date->endtime->get('H:i'); ?></dt>
+		<dd><?php echo $date->catname; ?>: <?php echo $date->pagetitle; ?></dd>
+<?php endforeach; ?>
+</dl>
