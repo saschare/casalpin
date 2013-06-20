@@ -2,7 +2,7 @@ var dashboard = Ext.getCmp('dashboard');
 
 var welcomeScreen = new Ext.Panel({
     id: 'welcomeScreen',
-    title: 'welcome to moraso cms',
+    title: '',
     items: [{
         html: "<p><?php echo $this->greeting; ?> Herr <?php echo $this->user; ?>,<br /><br />aktuell <?php echo $this->todos; ?> für Sie hinterlegt.</p>",
         xtype: "panel",
@@ -10,7 +10,7 @@ var welcomeScreen = new Ext.Panel({
     }]
 });
 
-dashboard.add({
+/*dashboard.add({
     columnWidth: 1/3,
     baseCls: 'x-plain',
     bodyStyle: 'padding: 6px 4px 0 4px',
@@ -20,4 +20,4 @@ dashboard.add({
         layout: 'fit',
         items: welcomeScreen
     }
-});
+}); */
