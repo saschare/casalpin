@@ -1,0 +1,12 @@
+<?php unset($this->bc[0]); ?>
+
+<ul class="breadcrumbs">
+    <li>
+        <a href="{ref:idcat-0}">moraso CMS</a>
+    </li>
+    <?php foreach ($this->bc as $entry) : ?>
+        <li>
+            <a href="{ref:idcat-<?php echo $entry['idcat']; ?>}"><?php echo $entry['name']; ?></a>
+        </li>
+    <?php endforeach; ?>
+</ul>

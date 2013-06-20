@@ -1,0 +1,28 @@
+<?php if (isset($this->nav) && $this->nav->haschildren) : ?>
+    <div class="docs section-container accordion" data-section data-options="deep_linking: false">
+        <?php foreach ($this->nav->children as $cat) : ?>
+            <section class="section <?php if ($cat->iscurrent || $cat->isparent) {
+            echo 'active';
+        } ?>">
+                <p class="title">
+                    <a href="{ref:idcat-<?php echo $cat->idcat; ?>}"><?php echo $cat->name; ?></a>
+                </p>
+
+        <?php if ($cat->haschildren) : ?>
+                    <div class="content">
+                        <ul class="side-nav">
+                            <li>
+                                <a href="{ref:idcat-<?php echo $cat->idcat; ?>}"><?php echo $cat->name; ?></a>
+                            </li>
+            <?php foreach ($cat->children as $child) : ?>
+                                <li>
+                                    <a href="{ref:idcat-<?php echo $child->idcat; ?>}"><?php echo $child->name; ?></a>
+                                </li>
+                    <?php endforeach; ?>
+                        </ul>
+                    </div>
+            <?php endif; ?>
+            </section>
+    <?php endforeach; ?>
+    </div>
+<?php endif; ?>
