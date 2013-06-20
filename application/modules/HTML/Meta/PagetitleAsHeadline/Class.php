@@ -16,14 +16,17 @@ class Module_HTML_Meta_PagetitleAsHeadline_Class extends Aitsu_Module_Abstract {
 		}
 
 		$headline = htmlentities(Aitsu_Content_Text :: get('Headline', 0), ENT_COMPAT, 'UTF-8');
+		//$headline = Aitsu_Content_Text :: get('Headline', 0);
 		if (empty ($headline)) {
 			$headline = htmlentities(stripslashes(Aitsu_Core_Article :: factory()->pagetitle), ENT_COMPAT, 'UTF-8');
 		}
 
+		$headline = strip_tags($headline, '<p><br><br />');
+
 		if ($this->_params->tag == 'no') {
 			$output = $headline;
 		} else {
-			$output = '<' . $this->_params->tag . '>' . $headline . '</' . $this->_params->tag . '>';
+			$output = '<' . $this->_params->tag . '>' . $headline . 'aaa</' . $this->_params->tag . '>';
 		}
 
 		if (Aitsu_Registry :: isEdit()) {

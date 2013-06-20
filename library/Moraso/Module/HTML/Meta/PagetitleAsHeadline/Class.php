@@ -17,7 +17,8 @@ class Moraso_Module_HTML_Meta_PagetitleAsHeadline_Class extends Moraso_Module_Ab
         $view = $this->_getView();
 
         $view->tag = $this->_params->tag;
-        $view->headline = htmlentities($headline, ENT_COMPAT, 'UTF-8');
+//        $view->headline = htmlentities($headline, ENT_COMPAT, 'UTF-8');
+        $view->headline = $headline;
 
         return $view->render('index.phtml');
     }
