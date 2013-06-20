@@ -1,0 +1,13 @@
+<!-- Standard -->
+<ul class="small-block-grid-2 large-block-grid-4">
+<?php foreach ($this->selectedImages as $image) : ?>
+    <?php
+    $image = (object) $image;
+    $this->attributes->alt = $image->subline;
+
+    echo '<li>';
+    echo Moraso_Html_Helper_Image::getHtml($image->idart, $image->filename, $this->width, $this->height, $this->render, $this->attributes);
+	echo '</li>';
+    ?>
+<?php endforeach; ?>
+</ul>
