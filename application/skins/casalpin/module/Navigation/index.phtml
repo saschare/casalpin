@@ -11,31 +11,8 @@
     <section class="menu">
 	    <ul class="left">
 			<?php foreach ($this->nav as $nav) : ?>
-			<li<?php if($this->nav->isCurrent) : ?> class="active"><?php endif;?> <?php If($nav['idcat'] === '16' || $nav['idcat'] === '19') :?>style="margin-bottom: 20px;"<?php endif;?> ><a href="{ref:idcat-<?php echo $nav['idcat']; ?>}" title="<?php echo $nav['name']; ?>"><?php echo $nav['name']; ?></a><li>
+			<li class="<?php if($nav['isCurrent']) : ?>active<?php endif;?><?php If($nav['idcat'] === '16' || $nav['idcat'] === '19') :?> divider<?php endif;?>"><a href="{ref:idcat-<?php echo $nav['idcat']; ?>}" title="<?php echo $nav['name']; ?>"><?php echo $nav['name']; ?></a><li>
 			<?php endforeach; ?>
 	    </ul>
     </section>
 </nav>
-
-
-
-<!-- <ul class="nav">
-<?php foreach ($this->nav as $nav) : ?>
-<?php if (count($nav->isParrent) == 0) : ?>
-<li <?php if ($nav->isParrent || $nav->isCurrent) : ?>class="active" <?php endif; ?>><a href="{ref:idcat-<?php echo $nav['idcat']; ?>}" title="<?php echo $nav->pagetitle; ?>"><?php echo $nav['name']; ?></a>
-<?php else : ?>
-<li class="dropdown<?php if ($nav->isParent || $nav->isCurrent) : ?> active<?php endif; ?>">
-<a href="#" <?php if ($nav->isParent || $nav->isCurrent) : ?> class="active"<?php endif; ?> title="<?php echo $nav->name; ?>" class="dropdown-toggle" data-toggle="dropdown"><?php echo $nav->name; ?> <b class="caret"></b></a>
-
-		<ul class="dropdown-menu">
-			<?php $i=1; foreach ($nav->children as $nav2) : ?>
-			<li><a <?php if ($nav2->isParent || $nav2->isCurrent) : ?> style="color: rgb(0,91,170);"<?php endif; ?> href="{ref:idcat-<?php echo $nav2->idcat; ?>}" title="<?php echo $nav2->name; ?>"><?php echo $nav2->name; ?></a></li>
-
-		<?php $i++; endforeach; ?>
-	</ul>
-	<?php endif; ?></li>
-	<?php endforeach; ?>
-</ul> -->
-
-
-
