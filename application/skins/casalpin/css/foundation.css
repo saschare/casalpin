@@ -94,7 +94,7 @@ li.active a { color: rgb(173, 139, 76);}
 ul.download { margin-top: 50px; list-style-type: none;}
 ul.download li { line-height: 1.5em; }
 li.divider { margin-bottom: 15px; }
-
+.headertext { font-size: 0.8em;}
 
 /* Grid HTML Classes */
 .row {
