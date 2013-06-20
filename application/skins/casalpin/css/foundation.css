@@ -87,7 +87,7 @@ select {
 /* custom */
 .botspace { margin-bottom: 20px;}
 .topspace { margin-top: 20px;}
-.botborder { border-bottom: 1px solid #000;}
+.botborder { border-bottom: 1px solid #dddddd;}
 .header { height: 171px;}
 li.active a { color: rgb(173, 139, 76);}
 .menu a { text-decoration: none;  }
