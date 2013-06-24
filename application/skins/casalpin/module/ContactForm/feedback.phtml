@@ -1,0 +1,166 @@
+<!-- Feedback -->
+<form class="yform full" action="<?php echo $this->action; ?>" method="post">
+
+    <?php if (isset($this->field->Vorname->show) && $this->field->Vorname->show) : ?>
+    <?php if (!Aitsu_Form_Validation :: isValid('Vorname', $value)) : ?>
+		<div class="subcl type-text error">
+	       	<strong class="message"><?php echo Aitsu_Translate :: _('The given pattern is not allowed or the field is mandatory. Please change it accordingly.'); ?></strong>
+        <?php else : ?>
+	    <div class="type-text">
+		<?php endif; ?>
+    <label><?php echo Aitsu_Translate :: _('Vorname'); ?><?php if ($this->field->Vorname->required == 1) echo ' *'; ?></label>
+    <input type="text" id="vorname" name="Vorname" value="<?php echo $value; ?>" />
+	    </div>
+    <?php endif; ?>
+
+    <?php if (isset($this->field->Nachname->show) && $this->field->Nachname->show) : ?>
+    <?php if (!Aitsu_Form_Validation :: isValid('Nachname', $value)) : ?>
+		<div class="subcl type-text error">
+	       	<strong class="message"><?php echo Aitsu_Translate :: _('The given pattern is not allowed or the field is mandatory. Please change it accordingly.'); ?></strong>
+        <?php else : ?>
+	    <div class="type-text">
+		<?php endif; ?>
+    <label><?php echo Aitsu_Translate :: _('Nachname'); ?><?php if ($this->field->Nachname->required == 1) echo ' *'; ?></label>
+    <input type="text" id="nachname" name="Nachname" value="<?php echo $value; ?>" />
+	    </div>
+    <?php endif; ?>
+
+    <?php if (isset($this->field->Firma->show) && $this->field->Firma->show) : ?>
+    <?php if (!Aitsu_Form_Validation :: isValid('Company', $value)) : ?>
+		<div class="subcl type-text error">
+	       	<strong class="message"><?php echo Aitsu_Translate :: _('The given pattern is not allowed or the field is mandatory. Please change it accordingly.'); ?></strong>
+        <?php else : ?>
+	    <div class="type-text">
+		<?php endif; ?>
+    <label><?php echo Aitsu_Translate :: _('Firma'); ?><?php if ($this->field->Firma->required == 1) echo ' *'; ?></label>
+    <input type="text" id="firma" name="Firma" value="<?php echo $value; ?>" />
+	    </div>
+    <?php endif; ?>
+    <?php if (isset($this->field->Abteilung->show) && $this->field->Abteilung->show) : ?>
+    <?php if (!Aitsu_Form_Validation :: isValid('Abteilung', $value)) : ?>
+		<div class="subcl type-text error">
+	       	<strong class="message"><?php echo Aitsu_Translate :: _('The given pattern is not allowed or the field is mandatory. Please change it accordingly.'); ?></strong>
+        <?php else : ?>
+	    <div class="type-text">
+		<?php endif; ?>
+    <label><?php echo Aitsu_Translate :: _('Abteilung'); ?><?php if ($this->field->Abteilung->required == 1) echo ' *'; ?></label>
+    <input type="text" id="abteilung" name="Abteilung" value="<?php echo $value; ?>" />
+	    </div>
+    <?php endif; ?>
+
+    <?php if (isset($this->field->Strasse->show) && $this->field->Strasse->show) : ?>
+    <?php if (!Aitsu_Form_Validation :: isValid('Strasse', $value)) : ?>
+		<div class="subcl type-text error">
+	       	<strong class="message"><?php echo Aitsu_Translate :: _('The given pattern is not allowed or the field is mandatory. Please change it accordingly.'); ?></strong>
+        <?php else : ?>
+	    <div class="type-text">
+		<?php endif; ?>
+    <label><?php echo Aitsu_Translate :: _('Strasse'); ?><?php if ($this->field->Strasse->required == 1) echo ' *'; ?></label>
+    <input type="text" id="strasse" name="Strasse" value="<?php echo $value; ?>" />
+	    </div>
+    <?php endif; ?>
+
+    <?php if (isset($this->field->PLZ->show) && $this->field->PLZ->show && isset($this->field->Ort->show) && $this->field->Ort->show) : ?>
+    <?php if (!Aitsu_Form_Validation :: isValid('PLZ', $value) || !Aitsu_Form_Validation :: isValid('Ort', $value)) : ?>
+	        <div class="subcl type-text error" style="padding-left:0; padding-right:0; margin-left:0; margin-right:0;">
+	            <strong class="message"><?php echo Aitsu_Translate :: _('The given pattern is not allowed or the field is mandatory. Please change it accordingly.'); ?></strong>
+        <?php else : ?>
+	        <div class="subcl type-text">
+        <?php endif; ?>
+        <label><?php echo Aitsu_Translate :: _('PLZ &amp; Ort'); ?><?php if ($this->field->Ort->required == 1 || $this->field->PLZ->required == 1) echo ' *'; ?></label>
+        <div id="ZipCityWrapper">
+            <?php Aitsu_Form_Validation :: isValid('PLZ', $value); ?>
+            <input type="text" id="plz" name="PLZ" value="<?php echo $value; ?>" />
+            <?php Aitsu_Form_Validation :: isValid('Ort', $value); ?>
+            <input type="text" id="ort" name="Ort" value="<?php echo $value; ?>"/>
+        </div>
+     </div>
+    <?php endif; ?>
+
+    <?php if (isset($this->field->Land->show) && $this->field->Land->show) : ?>
+    <?php if (!Aitsu_Form_Validation :: isValid('Land', $value)) : ?>
+		<div class="subcl type-text error">
+	       	<strong class="message"><?php echo Aitsu_Translate :: _('The given pattern is not allowed or the field is mandatory. Please change it accordingly.'); ?></strong>
+        <?php else : ?>
+	    <div class="type-text">
+		<?php endif; ?>
+    <label><?php echo Aitsu_Translate :: _('Land'); ?><?php if ($this->field->Land->required == 1) echo ' *'; ?></label>
+    <input type="text" id="land" name="Land" value="<?php echo $value; ?>" />
+	    </div>
+    <?php endif; ?>
+    <?php if (isset($this->field->Telefon->show) && $this->field->Telefon->show) : ?>
+    <?php if (!Aitsu_Form_Validation :: isValid('Telefon', $value)) : ?>
+		<div class="subcl type-text error">
+	       	<strong class="message"><?php echo Aitsu_Translate :: _('The given pattern is not allowed or the field is mandatory. Please change it accordingly.'); ?></strong>
+        <?php else : ?>
+	    <div class="type-text">
+		<?php endif; ?>
+    <label><?php echo Aitsu_Translate :: _('Telefon'); ?><?php if ($this->field->Telefon->required == 1) echo ' *'; ?></label>
+    <input type="text" id="telefon" name="Telefon" value="<?php echo $value; ?>" />
+	    </div>
+    <?php endif; ?>
+    <?php if (isset($this->field->Fax->show) && $this->field->Fax->show) : ?>
+    <?php if (!Aitsu_Form_Validation :: isValid('Fax', $value)) : ?>
+		<div class="subcl type-text error">
+	       	<strong class="message"><?php echo Aitsu_Translate :: _('The given pattern is not allowed or the field is mandatory. Please change it accordingly.'); ?></strong>
+        <?php else : ?>
+	    <div class="type-text">
+		<?php endif; ?>
+    <label><?php echo Aitsu_Translate :: _('Fax'); ?><?php if ($this->field->Fax->required == 1) echo ' *'; ?></label>
+    <input type="text" id="fax" name="Fax" value="<?php echo $value; ?>" />
+	    </div>
+    <?php endif; ?>
+    <?php if (isset($this->field->Email->show) && $this->field->Email->show) : ?>
+    <?php if (!Aitsu_Form_Validation :: isValid('Email', $value)) : ?>
+		<div class="subcl type-text error">
+	       	<strong class="message"><?php echo Aitsu_Translate :: _('The given pattern is not allowed or the field is mandatory. Please change it accordingly.'); ?></strong>
+        <?php else : ?>
+	    <div class="type-text">
+		<?php endif; ?>
+    <label><?php echo Aitsu_Translate :: _('Email'); ?><?php if ($this->field->Email->required == 1) echo ' *'; ?></label>
+    <input type="text" id="email" name="Email" value="<?php echo $value; ?>" />
+	    </div>
+    <?php endif; ?>
+
+
+    <?php if (isset($this->field->Betreff->show) && $this->field->Betreff->show) : ?>
+    <?php if (!Aitsu_Form_Validation :: isValid('Betreff', $value)) : ?>
+		<div class="subcl type-select error">
+	       	<strong class="message"><?php echo Aitsu_Translate :: _('The given pattern is not allowed or the field is mandatory. Please change it accordingly.'); ?></strong>
+        <?php else : ?>
+	    <div class="type-select">
+		<?php endif; ?>
+    <label><?php echo Aitsu_Translate :: _('Betreff'); ?><?php if ($this->field->Betreff->required == 1) echo ' *'; ?></label>
+    <?php
+    $topics = array(
+        'Website' => Aitsu_Translate::_("Website"),
+        'Ausbildung' => Aitsu_Translate::_("Ausbildung"),
+        'P-und-DL' => Aitsu_Translate::_("Produkte und Dienstleistungen"),
+        'allgemein' => Aitsu_Translate::_("allgemein")
+    );
+    ?>
+    <select id="betreff" name="Betreff">
+        <option value="" class="defaultSelection"><?php echo Aitsu_Translate::_("Bitte w&auml;hlen Sie ein Thema f&uuml;r Ihre R&uuml;ckmeldung aus"); ?></option>
+        <?php foreach($topics as $index=>$topic): ?>
+            <option value="<?php echo $index; ?>"<?php if($value == $index): ?> selected="selected"<?php endif; ?>><?php echo $topic; ?></option>
+        <?php endforeach; ?>
+    </select>
+	    </div>
+    <?php endif; ?>
+
+    <?php if (isset($this->field->Message->show) && $this->field->Message->show) : ?>
+    <?php if (!Aitsu_Form_Validation :: isValid('Message', $value)) : ?>
+		<div class="subcl type-text error">
+	       	<strong class="message"><?php echo Aitsu_Translate :: _('The given pattern is not allowed or the field is mandatory. Please change it accordingly.'); ?></strong>
+        <?php else : ?>
+	    <div class="type-text">
+		<?php endif; ?>
+    <label><?php echo Aitsu_Translate :: _('Ihr Feedback'); ?><?php if ($this->field->Message->required == 1) echo ' *'; ?></label>
+    <textarea rows="3" cols="30" id="message" name="Message"><?php echo $value; ?></textarea>
+	    </div>
+    <?php endif; ?>
+
+    <div class="type-button">
+        <input type="submit" value="<?php echo Aitsu_Translate :: _('senden'); ?>" />
+    </div>
+</form>
