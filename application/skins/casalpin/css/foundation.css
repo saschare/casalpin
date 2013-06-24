@@ -3121,18 +3121,19 @@ form.custom {
       border-left-color: #ccc; }
 
 .orbit-bullets {
+	display: none;
   margin: 0 auto 30px auto;
   overflow: hidden;
   position: relative;
   top: 10px; }
   .orbit-bullets li {
     display: block;
-    width: 18px;
-    height: 18px;
+    width: 10px;
+    height: 10px;
     background: #999999;
     float: left;
     margin-right: 6px;
-    border: solid 2px #222222;
+    border: solid 0px #222222;
     -webkit-border-radius: 1000px;
     border-radius: 1000px; }
     .orbit-bullets li.active {
