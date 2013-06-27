@@ -1,11 +1,15 @@
 <!-- Standard -->
 <?php if (count($this->articles) > 0): ?>
-<ul class="small-block-grid-1 large-block-grid-3" style="min-height: 100px;">
+<ul class="small-block-grid-1 large-block-grid-3" style="min-height: 100px; padding-top: 0; margin-top: 0;">
 <?php foreach ($this->articles as $article) : ?>
+<?php $idcat = Aitsu_Util::getIdCatByIdArt($article->idart); ?>
 <li style="height: 200px; background: url(/image/200/200/0/<?php echo $article->idart; ?>/<?php echo $article->mainimage; ?>) no-repeat center center;">
+<a href="{ref:idcat-<?php echo $idcat; ?>}" target="_self">
      <span style="bottom: 10px; position: absolute; padding: 0 10px;"><h1 style="color: #fff;"><?php echo $article->pagetitle; ?></h1>
 	   <?php echo $article->content; ?>	</span>
-</li>	   
+</a> 
+</li>	  
+
 <?php endforeach; ?>
 </ul>
 <?php else: ?>
