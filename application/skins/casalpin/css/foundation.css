@@ -1244,7 +1244,8 @@ blockquote p {
 
   h2 {
     font-size: 1.0em; 
-    font-weight: bold;}
+    font-weight: bold;
+    margin: 0.9em 0 0.5em}
 
   h3 {
     font-size: 1.2em; }
