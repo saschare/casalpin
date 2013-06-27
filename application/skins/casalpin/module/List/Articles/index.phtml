@@ -2,9 +2,9 @@
 <?php if (count($this->articles) > 0): ?>
 <ul class="small-block-grid-1 large-block-grid-3" style="min-height: 100px;">
 <?php foreach ($this->articles as $article) : ?>
-<li style=" background: #d7d7d7;">
-       <h1 style="color: white;"><?php echo $article->pagetitle; ?></h1>
-	   <?php echo $article->content; ?>	
+<li style="height: 200px; background: url(http://local.casalpin.com/image/200/200/0/18/Aussen_1971_HausA_1971.jpg) no-repeat center center;">
+     <span style="bottom: 10px; position: absolute; padding: 0 10px;"><h1 style="color: #fff;"><?php echo $article->pagetitle; ?></h1>
+	   <?php echo $article->content; ?>	</span>
 </li>	   
 <?php endforeach; ?>
 </ul>
