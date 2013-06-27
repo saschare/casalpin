@@ -1,0 +1,25 @@
+<!-- Standard -->
+<?php if (count($this->articles) > 0): ?>
+    <?php foreach ($this->articles as $article) : ?>
+        <?php print_r($article); ?>
+    <?php endforeach; ?>
+
+    <p>
+        current Page: <?php echo $this->currentPage; ?><br />
+        pages: <?php echo $this->pages; ?>
+    </p>
+
+    <?php if ($this->pages > 1) : ?>
+        <ul class="pagination">
+            <?php for ($p = 1; $p <= $this->pages; $p++) : ?>
+                <li class="<?php echo $p == $this->currentPage ? 'active' : ''; ?>">
+                    <a href="{ref:idart-<?php echo $this->idart; ?>}?page=<?php echo $p; ?>">
+                        Page <?php echo $p; ?>
+                    </a>
+                </li>
+            <?php endfor; ?>
+        </ul>
+    <?php endif; ?>
+<?php else: ?>
+    <p>keine Artikel vorhanden</p>
+<?php endif; ?>
