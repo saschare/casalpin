@@ -1,8 +1,8 @@
 <!-- Standard -->
 <?php if (count($this->articles) > 0): ?>
-<ul class="small-block-grid-1 large-block-grid-3" style="min-height: 100px; background: #d7d7d7; color: white; ">
+<ul class="small-block-grid-1 large-block-grid-3" style="min-height: 100px;">
 <?php foreach ($this->articles as $article) : ?>
-<li>
+<li style=" background: #d7d7d7;">
        <h1 style="color: white;"><?php echo $article->pagetitle; ?></h1>
 	   <?php echo $article->content; ?>	
 </li>	   
