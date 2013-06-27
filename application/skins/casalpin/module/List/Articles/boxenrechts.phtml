@@ -1,9 +1,10 @@
 <!-- boxenrechts -->
 <?php if (count($this->articles) > 0): ?>
 <?php foreach ($this->articles as $article) : ?>
-	<div class="large-12 columns" style="background: #442102; padding: 5px; color: white; ">Teasertitle</div>
+<?php $idcat = Aitsu_Util::getIdCatByIdArt($article->idart); ?>
+	<div class="large-12 columns" style="background: #442102; padding: 5px; color: white; "><?php echo $article->articletitle; ?></div>
     <div class="large-12 columns" style="min-height: 100px; background: #d7d7d7; margin-bottom: 20px; color: white; ">
-       <h1 style="color: white;"><?php echo $article->pagetitle; ?></h1>
+       <h2 style="color: white;"><?php echo $article->pagetitle; ?></h2>
 	   <?php echo $article->content; ?>	
 	</div>
 <?php endforeach; ?>
