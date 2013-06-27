@@ -91,10 +91,10 @@ select {
 .header { height: 171px;}
 li.active a { color: rgb(173, 139, 76);}
 .menu a { text-decoration: none;  }
-ul.download { margin-top: 50px; list-style-type: none;}
+ul.download { margin-top: 20px; list-style-type: none;}
 ul.download li { line-height: 1.5em; }
 li.divider { margin-bottom: 15px; }
-.headertext { font-size: 0.8em;}
+.headertext { font-size: 0.8em; margin-bottom: 15px;}
 
 /* Grid HTML Classes */
 .row {
@@ -1065,7 +1065,7 @@ p {
   font-weight: normal;
   font-size: 0.95em;
   line-height: 1.6;
-  margin-bottom: 1.25em;
+  margin-bottom: 0.25em;
   text-rendering: optimizeLegibility; }
   p aside {
     font-size: 0.875em;
@@ -1111,7 +1111,7 @@ hr {
   border: solid #dddddd;
   border-width: 1px 0 0;
   clear: both;
-  margin: 1.25em 0 1.1875em;
+  margin: 1em 0;
   height: 0; }
 
 /* Helpful Typography Defaults */
@@ -1234,7 +1234,7 @@ blockquote p {
 
 @media only screen and (min-width: 768px) {
   h1, h2, h3, h4, h5, h6 {
-    line-height: 1.4; 
+    line-height: 1.1em; 
     font-weight: normal;
     }
 
