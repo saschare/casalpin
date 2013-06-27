@@ -5,9 +5,9 @@
     $image = (object) $image;
     $this->attributes->alt = $image->subline;
 
-    echo '<li>';
+    echo '<a class="fancybox" href="/image/900/600/0/<?php echo $article->idart; ?>/<?php echo $article->mainimage; ?>" data-fancybox-group="gallery" title="Lorem ipsum dolor sit amet"><li>';
     echo Moraso_Html_Helper_Image::getHtml($image->idart, $image->filename, $this->width, $this->height, $this->render, $this->attributes);
-	echo '</li>';
+	echo '</li></a>';
     ?>
 <?php endforeach; ?>
 </ul>
