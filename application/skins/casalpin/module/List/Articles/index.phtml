@@ -1,13 +1,13 @@
-<!-- boxenrechts -->
+<!-- Standard -->
 <?php if (count($this->articles) > 0): ?>
+<ul class="small-block-grid-1 large-block-grid-3" style="min-height: 100px; background: #d7d7d7; color: white; ">
 <?php foreach ($this->articles as $article) : ?>
-<div class="row" style="min-height: 100px; background: #d7d7d7; margin-bottom: 20px; color: white; ">
-    <div class="twelve columns">
+<li>
        <h1 style="color: white;"><?php echo $article->pagetitle; ?></h1>
 	   <?php echo $article->content; ?>	
-	</div>
-</div>
+</li>	   
 <?php endforeach; ?>
+</ul>
 <?php else: ?>
     <p>keine Artikel vorhanden</p>
 <?php endif; ?>
