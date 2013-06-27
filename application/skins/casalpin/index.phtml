@@ -43,9 +43,19 @@
         <script src="/skin/js/vendor/prefixfree.min.js"></script>
         <script src="/skin/js/vendor/custom.modernizr.js"></script>
         <script src="/skin/js/jquery.js"></script>
-
-
         <script src="/skin/js/jquery.nicescroll.min.js"></script>
+
+
+
+	<!-- Add mousewheel plugin (this is optional) -->
+	<script type="text/javascript" src="/skin/js/jquery.mousewheel-3.0.6.pack.js"></script>
+
+	<!-- Add fancyBox main JS and CSS files -->
+	<script type="text/javascript" src="/skin/source/jquery.fancybox.js?v=2.1.5"></script>
+	<link rel="stylesheet" type="text/css" href="/skin/source/jquery.fancybox.css?v=2.1.5" media="screen" />
+
+
+
         <!-- JS :: End -->
 
         <!-- IE Fix for HTML5 Tags -->
@@ -53,7 +63,10 @@
                 <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
         <![endif]-->
     </head>
+    <!-- <body style="background: url(/skin/images/holz-hintergrund.jpg) no-repeat center center; background-size: 100% 100% ">-->
     <body>
+    	<div class="large-12 columns">
+    	<div class="row" style="background: white; padding: 0 20px;">
         <!-- End Google Tag Manager -->
 
         <!-- Header :: Start -->
@@ -97,8 +110,8 @@
         </script>
         <script src="/skin/js/foundation.min.js"></script>
 
-
-	
+    	</div>
+	</div>
         <script>
 $(document).foundation('orbit', {
   timer_speed: 10000,
@@ -113,8 +126,9 @@ $(document).foundation('orbit', {
         $(document).ready(
 			function() {
 				$("html").niceScroll();
-			}
-		);
+			$('.fancybox').fancybox();
+					}
+);
         </script>
         <!-- JS :: End -->
         
