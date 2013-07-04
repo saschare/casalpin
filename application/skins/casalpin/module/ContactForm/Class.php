@@ -44,8 +44,8 @@ class Skin_Module_ContactForm_Class extends Aitsu_Module_Abstract {
              $cf->setValidator('Email', 'Email', null, true);
 
           $cf->process(Aitsu_Form_Processor_Email :: factory($redirectTo, array (
-             'sendermail' => $senderMail,
-             'sendername' => $senderName,
+             'sendermail' => 'Email',
+             'sendername' => 'Name',
              'recepientmail' => $receipientMail,
              'recepientname' => $receipientName,
              'subject' => $subject . ' :: ' . Aitsu_Util :: getCurrentUrl()
