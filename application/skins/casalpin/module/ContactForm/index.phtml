@@ -1,9 +1,90 @@
-<form class="yform full" action="<?php echo $view->action; ?>" method="post">
+<!-- <script>
+
+function example1() {
+	var input = jQuery('form#anfrage input#name');
+	var defvalcfg = {
+		de: 'Begriff 1, Begriff 2',
+		en: 'term 1, term 2'
+	}
+	var defval = defvalcfg[jQuery('html').attr('lang')];
+	input.val(defval);
+	input.bind(
+		'click focus',
+		function() {
+			if (input.val() == defval) {
+				input.val('');
+			}
+		}
+	);
+	input.bind(
+		'blur',
+		function() {
+			if (input.val() == '') {
+				input.val(defval);
+			}
+		}
+	);
+}
+
+function example2() {
+	var input = jQuery('div#example2 form input#q2');
+	var defval = jQuery('div#example2 form label[for=q2]').html();
+	input.val(defval);
+	input.bind(
+		'click focus',
+		function() {
+			if (input.val() == defval) {
+				input.val('');
+			}
+		}
+	);
+	input.bind(
+		'blur',
+		function() {
+			if (input.val() == '') {
+				input.val(defval);
+			}
+		}
+	);
+}
+
+function example3() {
+	var input = jQuery('div#example3 form input#q3');
+	var label = jQuery('div#example3 form label[for=q3]');
+	input.bind(
+		'click focus change',
+		function() {
+			label.css('visibility', 'hidden');
+		}
+	);
+	input.bind(
+		'blur',
+		function() {
+			if (input.val() == '') {
+				label.css('visibility', '');
+			}
+		}
+	);
+}
+
+
+jQuery(document).ready(
+	function(){
+		example1();
+		example2();
+		example3();
+	}
+);
+
+</script> -->
+
+
+<form id="anfrage" class="yform full" action="<?php echo $view->action; ?>" method="post">
         
         <?php $passed = Aitsu_Form_Validation :: isValid('Name', $name); ?>
         <div class="type-text<?php echo $passed ? '' : ' error'; ?>">
           <label><?php echo Aitsu_Translate :: _('Name');?></label>
-          <input name="Name" value="Bitte geben Sie Ihren Vor- und Nachnamen ein." type="text">
+          <input id="name" name="Name" value="<?php echo $_POST['Name'] ;?>" type="text">
         </div>
         
         <?php $passed = Aitsu_Form_Validation :: isValid('Email', $email); ?>
@@ -94,21 +175,21 @@
 		<div class="fuzzy full">
               <input class="left" name="Fruehstuecksservice" id="fruehstuecksservice" value="1" type="checkbox">
               <label class="left" for="fruehstuecksservice">
-                &nbsp;&nbsp;Frühstücksservice
+                &nbsp;&nbsp;<?php echo Aitsu_Translate :: _('Frühstücksservice');?>
 		</label>
 		</div>
 		<br style="clear:both;">
 		<div class="fuzzy full">
               <input class="left" name="Kuehlschrankservice" id="kuehlschrankservice" value="1" type="checkbox">
               <label class="left" for="kuehlschrankservice">
-                &nbsp;&nbsp;Kühlschrankservice
+                &nbsp;&nbsp;<?php echo Aitsu_Translate :: _('Kühlschrankservice');?>
               </label>
 		</div>
 		<br style="clear:both;">
 		<div class="fuzzy full">
               <input class="left" name="Getraenkeservice" id="getraenkeservice" value="1" type="checkbox">
               <label class="left" for="getraenkeservice">
-                &nbsp;&nbsp;Getränkeservice
+                &nbsp;&nbsp;<?php echo Aitsu_Translate :: _('Getränkeservice');?>
               </label>
 		</div>
 		<br style="clear:both;">
@@ -118,11 +199,7 @@
       
    		<!-- Ende Wünsche etc. -->
 
-        <?php $passed = Aitsu_Form_Validation :: isValid('Anmerkung', $message); ?>
         <div class="type-text<?php echo $passed ? '' : ' error'; ?>">
-        <?php if (!$passed) : ?>
-          <strong class="message"><?php echo Aitsu_Translate :: _('Please provide your message') ;?></strong>
-        <?php endif; ?>
           <label><?php echo Aitsu_Translate :: _('Anmerkung/Wünsche');?></label>
           <textarea name="Anmerkung" rows="3" cols="30"><?php echo $message ;?></textarea>
         </div>
