@@ -3,7 +3,7 @@
         <?php $passed = Aitsu_Form_Validation :: isValid('Name', $name); ?>
         <div class="type-text<?php echo $passed ? '' : ' error'; ?>">
           <label><?php echo Aitsu_Translate :: _('Name');?></label>
-          <input name="Name" value="<?php echo $name ;?>" type="text">
+          <input name="Name" value="Bitte geben Sie Ihren Vor- und Nachnamen ein." type="text">
         </div>
         
         <?php $passed = Aitsu_Form_Validation :: isValid('Email', $email); ?>
@@ -45,6 +45,7 @@
         	<div class="clear"></div>
             <div class="drop-down-icon">
             <select name="Erwaschsene" id="Erwaschsene">
+                <option value="-" selected="selected">-</option>
             	<option value="1">1</option>
                 <option value="2" selected="selected">2</option>
                 <option value="3">3</option>
@@ -63,6 +64,7 @@
         	<div class="clear"></div>
             <div class="drop-down-icon">
             <select name="Kinder" id="Kinder">
+                <option value="-" selected="selected">-</option>
             	<option value="1">1</option>
                 <option value="2" selected="selected">2</option>
                 <option value="3">3</option>
