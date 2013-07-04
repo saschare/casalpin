@@ -1,273 +1,123 @@
-<!--    <form class="yform full" action="<?php echo $view->action; ?>" method="post">
-      <fieldset>
-        <legend><?php echo $this->subject; ?></legend>
-        <?php $passed = Aitsu_Form_Validation :: isValid('name', $name); ?>
+<form class="yform full" action="<?php echo $view->action; ?>" method="post">
+        
+        <?php $passed = Aitsu_Form_Validation :: isValid('Name', $name); ?>
         <div class="type-text<?php echo $passed ? '' : ' error'; ?>">
-        <?php if (!$passed) : ?>
-          <strong class="message"><?php echo Aitsu_Translate :: _('Please provide your name') ;?></strong>
-        <?php endif; ?>
-          <label><?php echo Aitsu_Translate :: _('First/Lastname');?></label>
-          <input name="name" value="<?php echo $name ;?>" />
+          <label><?php echo Aitsu_Translate :: _('Name');?></label>
+          <input name="Name" value="<?php echo $name ;?>" type="text">
         </div>
-        <?php $passed = Aitsu_Form_Validation :: isValid('company', $company); ?>
+        
+        <?php $passed = Aitsu_Form_Validation :: isValid('Email', $email); ?>
         <div class="type-text<?php echo $passed ? '' : ' error'; ?>">
-        <?php if (!$passed) : ?>
-          <strong class="message"><?php echo Aitsu_Translate :: _('Please provide your company') ;?></strong>
-        <?php endif; ?>
-          <label><?php echo Aitsu_Translate :: _('Company');?></label>
-          <input name="company" value="<?php echo $company ;?>" />
-        </div>
-        <?php $passed = Aitsu_Form_Validation :: isValid('telephone', $telephone); ?>
-        <div class="type-text<?php echo $passed ? '' : ' error'; ?>">
-        <?php if (!$passed) : ?>
-          <strong class="message"><?php echo Aitsu_Translate :: _('Please provide a valid telephone number') ;?></strong>
-        <?php endif; ?>
-          <label><?php echo Aitsu_Translate :: _('Telephone');?></label>
-          <input name="telephone" value="<?php echo $telephone ;?>" />
-        </div>
-        <?php $passed = Aitsu_Form_Validation :: isValid('email', $email); ?>
-        <div class="type-text<?php echo $passed ? '' : ' error'; ?>">
-        <?php if (!$passed) : ?>
-          <strong class="message"><?php echo Aitsu_Translate :: _('Please provide a valid e-mail-address') ;?></strong>
-        <?php endif; ?>
           <label><?php echo Aitsu_Translate :: _('E-Mail');?></label>
-          <input name="email" value="<?php echo $email ;?>" />
+          <input name="Email" value="<?php echo $email ;?>" type="text">
         </div>
-        <?php $passed = Aitsu_Form_Validation :: isValid('message', $message); ?>
-        <div class="type-text<?php echo $passed ? '' : ' error'; ?>">
-        <?php if (!$passed) : ?>
-          <strong class="message"><?php echo Aitsu_Translate :: _('Please provide your message') ;?></strong>
-        <?php endif; ?>
-          <label><?php echo Aitsu_Translate :: _('Message');?></label>
-          <textarea name="message" rows="3" cols="30"><?php echo $message ;?></textarea>
-        </div>
-        <div class="type-button">
-          <button class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-icon"><span class="ui-button-icon-primary ui-icon ui-icon-check">&nbsp;</span><span class="ui-button-text"><?php echo Aitsu_Translate :: _('Submit');?></span></button>
-        </div>
-      </fieldset>
-    </form> -->
-    
-    
-    
-    
-    
-    <form class="yform full" action="<?php echo $view->action; ?>" method="post">
+        
 
-          <div id="insertSearchedAfter"></div>
-        <input name="fa" value="1" type="hidden">
-       
-        <!-- Datumseingabe -->
-        <div class="dateWrapper">
-          <div class="startDate">
-            <label for="sd" id="l_sd" class="date">Anreise</label>
-            <div class="calpic" id="sd-handle"></div>
-            <div class="clear"></div>
-            <input id="sd" value="29.06.2013" name="sd" class="date hasDatepicker" type="text">
-          </div>
-          <div class="endDate">
-            <label for="ed" id="l_ed" class="date">Abreise</label>
-            <div class="calpic" id="ed-handle"></div>
-            <div class="clear"></div>
-            <input id="ed" value="06.07.2013" name="ed" class="date hasDatepicker" type="text">
-          </div>
+        <?php $passed = Aitsu_Form_Validation :: isValid('Anreise', $anreise); ?>
+        <div class="type-text<?php echo $passed ? '' : ' error'; ?>">
+          <label><?php echo Aitsu_Translate :: _('Anreisedatum');?></label>
+          <input name="Anreise" class="datepicker"  value="<?php echo $anreise ;?>" type="text">
+        </div>  
+
+        
+        <?php $passed = Aitsu_Form_Validation :: isValid('Abreisedatum', $abreisedatum); ?>
+        <div class="type-text<?php echo $passed ? '' : ' error'; ?>">
+          <label><?php echo Aitsu_Translate :: _('Abreisedatum');?></label>
+          <input name="Abreisedatum" class="datepicker" value="<?php echo $abreisedatum ;?>" type="text">
         </div>
-        <div class="space5px"></div>
-        <div id="datepickerErrorField" class="error" style="display:none"></div>
-        <div class="clear"></div>
-          <!-- Reisezeit noch unbekannt -->
-            <div class="fuzzy full">
-              <input class="left" name="fls" id="fls" value="1" type="checkbox">
-              <label class="left" for="fls">
-                ich bin flexibel (+/- 2 Wochen)
+
+		<br />
+		<!-- Reisezeit noch unbekannt -->
+        <div class="fuzzy full">
+              <input class="left" name="flexibel" id="flexibel" value="1" type="checkbox">
+              <label class="left" for="flexibel">
+                &nbsp;&nbsp;<?php echo Aitsu_Translate :: _('ich bin flexibel (+/- 2 Wochen)');?>
               </label>
-            </div>
-          <!-- Ende Reisezeit noch unbekannt -->
-        <div class="clear"></div>
-        <!-- Ende Datumseingabe -->
-        <!-- Selectbox Anzahl Zimmer -->
-        <div class="roomNumber left onethird">
-          <label for="rc">Zimmer: </label>
-          <div class="clear"></div>
-          <div class="drop-down-icon">
-            <select name="rc" id="rc">
-                <option value="1" selected="selected">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-            </select>
-          </div>
         </div>
-        <!-- Ende Selectbox Anzahl Zimmer -->
-        <!-- Details für ein Zimmer-->
-          <!-- Zimmertyp -->
-          <div class="roomType left twothird" id="roomtype" style="display:inline;">
-          <label for="sr">Zimmerart: </label>
-            <select class="half" name="sr" id="sr">
-              <option value="" selected="selected">Alle</option>
-              <option value="STPROOM">Zimmer</option>
-              <option value="STPAPP">Ferienwohnung</option>
-              <option value="STPHOUSE">Ferienhaus</option>
-              <option value="STPSUITE">Suite</option>
-            </select>
-          </div>
-          <!-- Ende Zimmertyp -->
-          <div id="count" style="display:inline;">
-            <!-- Anzahl Erwachsene -->
-            <div class="adultNumber left onethird">
-              <label for="a">Erw.: </label>
-              <div class="clear"></div>
-              <div class="drop-down-icon">
-              <select name="a" id="a">
-                <option value="1">1</option>
+        <!-- Ende Reisezeit noch unbekannt -->
+		<br />
+		
+		<br style="clear:both;">
+
+		<!-- Anzahl Erwachsene -->
+        <div class="adultNumber left onethird" style="padding-right: 10px;">
+        <label for="Erwaschene"><?php echo Aitsu_Translate :: _('Erw.');?></label>
+        	<div class="clear"></div>
+            <div class="drop-down-icon">
+            <select name="Erwaschsene" id="Erwaschsene">
+            	<option value="1">1</option>
                 <option value="2" selected="selected">2</option>
                 <option value="3">3</option>
                 <option value="4">4</option>
                 <option value="5">5</option>
                 <option value="6">6</option>
-                <option value="7">7</option>
-                <option value="8">8</option>
-                <option value="9">9</option>
-                <option value="10">10</option>
-              </select>   
-              </div>
-            </div>
-            <!-- Ende Anzahl Erwachsene -->
-            <!-- Anzahl Kinder -->
-            <div class="childrenNumber left onethird">
-              <label for="c">Kinder:</label>
-              <div class="clear"></div>
-              <div class="drop-down-icon">
-                <select name="c" id="c">
-                  <option value="0" selected="selected">0</option>
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                </select>
-              </div> 
-            </div>
-            <!-- Ende Anzahl Kinder -->
-            <div class="clear"></div>
-            <!-- Selectbox Alter Kinder -->
-            <div style="display: none;" class="roomdetails childrenfoldout" id="childagesection">
-              <label for="y0">Kindesalter (bei Antritt der Reise):</label>
-              <div class="full">
-               <div disabled="disabled" style="display: none;" id="childage0" class="childagecontainer">
-                 <div class="drop-down-icon">
-                   <select class="childage" name="y0" id="y0">
-                   
-                     <option value="0">0</option>
-                     <option selected="selected" value="1">1</option>
-                     <option value="2">2</option>
-                     <option value="3">3</option>
-                     <option value="4">4</option>
-                     <option value="5">5</option>
-                     <option value="6">6</option>
-                     <option value="7">7</option>
-                     <option value="8">8</option>
-                     <option value="9">9</option>
-                     <option value="10">10</option>
-                     <option value="11">11</option>
-                     <option value="12">12</option>
-                     <option value="13">13</option>
-                     <option value="14">14</option>
-                     <option value="15">15</option>
-                     <option value="16">16</option>
-                     <option value="17">17</option>
-                     <option value="18">18</option>
-                   </select>
-                 </div>
-               </div>
-               <div disabled="disabled" style="display: none;" id="childage1" class="childagecontainer">
-                 <div class="drop-down-icon">
-                   <select class="childage" name="y1" id="y1">
-                   
-                     <option value="0">0</option>
-                     <option selected="selected" value="1">1</option>
-                     <option value="2">2</option>
-                     <option value="3">3</option>
-                     <option value="4">4</option>
-                     <option value="5">5</option>
-                     <option value="6">6</option>
-                     <option value="7">7</option>
-                     <option value="8">8</option>
-                     <option value="9">9</option>
-                     <option value="10">10</option>
-                     <option value="11">11</option>
-                     <option value="12">12</option>
-                     <option value="13">13</option>
-                     <option value="14">14</option>
-                     <option value="15">15</option>
-                     <option value="16">16</option>
-                     <option value="17">17</option>
-                     <option value="18">18</option>
-                   </select>
-                 </div>
-               </div>
-               <div disabled="disabled" style="display: none;" id="childage2" class="childagecontainer">
-                 <div class="drop-down-icon">
-                   <select class="childage" name="y2" id="y2">
-                   
-                     <option value="0">0</option>
-                     <option selected="selected" value="1">1</option>
-                     <option value="2">2</option>
-                     <option value="3">3</option>
-                     <option value="4">4</option>
-                     <option value="5">5</option>
-                     <option value="6">6</option>
-                     <option value="7">7</option>
-                     <option value="8">8</option>
-                     <option value="9">9</option>
-                     <option value="10">10</option>
-                     <option value="11">11</option>
-                     <option value="12">12</option>
-                     <option value="13">13</option>
-                     <option value="14">14</option>
-                     <option value="15">15</option>
-                     <option value="16">16</option>
-                     <option value="17">17</option>
-                     <option value="18">18</option>
-                   </select>
-                 </div>
-               </div>
-               <div disabled="disabled" style="display: none;" id="childage3" class="childagecontainer">
-                 <div class="drop-down-icon">
-                   <select class="childage" name="y3" id="y3">
-                   
-                     <option value="0">0</option>
-                     <option selected="selected" value="1">1</option>
-                     <option value="2">2</option>
-                     <option value="3">3</option>
-                     <option value="4">4</option>
-                     <option value="5">5</option>
-                     <option value="6">6</option>
-                     <option value="7">7</option>
-                     <option value="8">8</option>
-                     <option value="9">9</option>
-                     <option value="10">10</option>
-                     <option value="11">11</option>
-                     <option value="12">12</option>
-                     <option value="13">13</option>
-                     <option value="14">14</option>
-                     <option value="15">15</option>
-                     <option value="16">16</option>
-                     <option value="17">17</option>
-                     <option value="18">18</option>
-                   </select>
-                 </div>
-               </div>
-               <div class="clear"></div>
-             </div>
-             <script type="text/javascript">
-             document.getElementById('childagesection').style.display = 'none';
-             </script>
-           </div>
-           <!-- Ende Selectbox Alter Kinder -->
-          </div>
-          <!--  Ende Details für ein Zimmer -->
-          <div class="clear"></div>
-          <div class="roomlines hidden"></div>
-          <div class="space5px"></div>
-          <input class="btn_gradient css_blue bubo_submit" value="Unterkunft suchen" id="GoQBB" name="GoQBB" title="Chalet suchen" type="submit">
-          <div class="space5px"></div>
-        </form>
+			</select>   
+			</div>
+         </div>
+         <!-- Ende Anzahl Erwachsene -->
+         
+         
+         <!-- Anzahl Kinder -->
+        <div class="adultNumber left onethird" style="padding-right: 10px;">
+        <label for="Kinder"><?php echo Aitsu_Translate :: _('Kinder');?></label>
+        	<div class="clear"></div>
+            <div class="drop-down-icon">
+            <select name="Kinder" id="Kinder">
+            	<option value="1">1</option>
+                <option value="2" selected="selected">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+			</select>   
+			</div>
+         </div>
+         <!-- Ende Anzahl Kinder -->
+
+		 <!-- Anzahl Baby -->
+        <div class="adultNumber left onethird" style="padding-right: 10px;">
+        <label for="Baby"><?php echo Aitsu_Translate :: _('Baby');?></label>
+        	<div class="clear"></div>
+            <div class="drop-down-icon">
+            <select name="Baby" id="Baby">
+                <option value="-" selected="selected">-</option>
+            	<option value="1">1</option>
+                <option value="2">2</option>
+			</select>   
+			</div>
+         </div>
+         <!-- Ende Anzahl Baby -->
+
+		 <br style="clear:both;">
+
+		<!-- Wünsche etc. -->
+		<div class="fuzzy full">
+              <input class="left" name="Fruehstuecksservice" id="fruehstuecksservice" value="1" type="checkbox">
+              <label class="left" for="fruehstuecksservice">
+                &nbsp;&nbsp;Frühstücksservice
+		</label>
+		</div>
+		<br style="clear:both;">
+		<div class="fuzzy full">
+              <input class="left" name="XYZ" id="XYZ" value="1" type="checkbox">
+              <label class="left" for="XYZ">
+                &nbsp;&nbsp;XYZ
+              </label>
+		</div>
+		<br style="clear:both;">
+
+
+
+      
+   		<!-- Ende Wünsche etc. -->
+
+        <?php $passed = Aitsu_Form_Validation :: isValid('Anmerkung', $message); ?>
+        <div class="type-text<?php echo $passed ? '' : ' error'; ?>">
+        <?php if (!$passed) : ?>
+          <strong class="message"><?php echo Aitsu_Translate :: _('Please provide your message') ;?></strong>
+        <?php endif; ?>
+          <label><?php echo Aitsu_Translate :: _('Anmerkung/Wünsche');?></label>
+          <textarea name="Anmerkung" rows="3" cols="30"><?php echo $message ;?></textarea>
+        </div>
+        <div class="type-button">
+          <button class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-icon"><span class="ui-button-icon-primary ui-icon ui-icon-check">&nbsp;</span><span class="ui-button-text"><?php echo Aitsu_Translate :: _('Chalet anfragen');?></span></button>
+        </div>
+    </form>

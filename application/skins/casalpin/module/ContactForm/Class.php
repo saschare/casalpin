@@ -38,11 +38,10 @@ class Skin_Module_ContactForm_Class extends Aitsu_Module_Abstract {
 
           $cf = Aitsu_Form_Validation :: factory('contactForm');
 
-             $cf->setValidator('name', 'NoTags', array('maxlength' => 100), true);
-             $cf->setValidator('company', 'NoTags', array('maxlength' => 100), false);
-             $cf->setValidator('telephone', 'NoTags', array('maxlength' => 30), true);
-             $cf->setValidator('email', 'Email', null, true);
-             $cf->setValidator('message', 'NoTags', array('maxlength' => 5000), true);
+             $cf->setValidator('Name', 'NoTags', array('maxlength' => 100), true);
+             $cf->setValidator('Anreise', 'NoTags', array('maxlength' => 30), false);
+             $cf->setValidator('Abreisedatum', 'NoTags', array('maxlength' => 30), true);
+             $cf->setValidator('Email', 'Email', null, true);
 
           $cf->process(Aitsu_Form_Processor_Email :: factory($redirectTo, array (
              'sendermail' => $senderMail,
