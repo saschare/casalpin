@@ -1,13 +1,17 @@
 <!-- boxenrechts -->
+<div class="row">
 <?php if (count($this->articles) > 0): ?>
 <?php foreach ($this->articles as $article) : ?>
 <?php $idcat = Aitsu_Util::getIdCatByIdArt($article->idart); ?>
+	<div class="large-12 columns alpha" style="padding: 0;">
 	<div class="large-12 columns" style="background: #442102; padding: 5px; color: white; "><?php echo $article->articletitle; ?></div>
     <div class="large-12 columns" style="min-height: 100px; background: #d7d7d7; margin-bottom: 20px; color: white; ">
-       <h2 style="color: white;"><?php echo $article->teasertitle; ?></h2>
+       <span style="color: white; font-family: arial; font-size: 14px; font-weight: bold; "><?php echo $article->teasertitle; ?></span>
 	   <!-- <?php echo $article->content; ?> -->
 	</div>
+	</div>
 <?php endforeach; ?>
+</div>
 <?php else: ?>
     <p>keine Artikel vorhanden</p>
 <?php endif; ?>
