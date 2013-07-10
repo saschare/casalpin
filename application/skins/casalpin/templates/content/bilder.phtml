@@ -8,13 +8,12 @@
 	<div class="large-8 columns">
 		<div class="row ">
 			<div class="large-12 columns botspace">
-				<script type="application/x-moraso" src="Image:featured">
+				<script type="application/x-moraso" src="Image:Bild">
 				width = 1000
 				height = config
 				default.height = 400
 				render = config
 				template = config
-				default.config = featured
 				</script>
 			</div>
 		</div>
@@ -27,6 +26,21 @@
             	tag = h1
 			</script>
 			<hr />
+
+			<script type="application/x-moraso" src="List.Articles:Port">
+	        	categories = 20
+                useOfStartArticle = 2
+	            orderBy = created
+	            template = portfolio
+	            limit = 99
+	            populateWith.intro.index = Einleitung
+	            populateWith.content.index = Fliesstext
+	            populateWith.bild.index = featured
+	            populateWith.bild.type = property
+	            populateWith.bild.index = ModuleConfig_featured:Image_Media
+	        </script>
+
+
 			<script type="application/x-moraso" src="HTML.Content:Content"></script>
             <script type="application/x-moraso" src="List.Download:PDFs"></script>
          </div>

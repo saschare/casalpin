@@ -1,0 +1,26 @@
+<!-- Bilder -->
+<?php foreach ($this->articles as $article) : ?>
+<div class="slide" id="slide3" data-slide="3" data-stellar-background-ratio="0.5" style="background-image: url(/image/1920/1440/0/<?php echo $article->idart; ?>/<?php echo $article->mainimage; ?>); overflow: hidden; min-height:1000px; background-color:#efefe3; background-repeat:no-repeat;">
+	<div class="container clearfix">
+		<div id="main" class="grid_12 dark">
+			<div style="padding: 10px;">
+			<h1><?php echo $article->pagetitle; ?></h1>
+            <h2><?php echo $article->teaser; ?></h2>
+            <?php echo $article->content; ?>
+			<script type="application/x-moraso" src="List.Articles:Port">
+	        	categories = 9
+                useOfStartArticle = 2
+	            orderBy = created
+	            template = portfolio
+	            limit = 99
+	            populateWith.intro.index = Einleitung
+	            populateWith.content.index = Fliesstext
+	            populateWith.bild.index = Bild
+	            populateWith.bild.type 	= property
+	            populateWith.bild.index = ModuleConfig_bild:Image_Media
+	        </script>
+			</div>
+		</div>
+	</div>
+</div>
+<?php endforeach; ?>
