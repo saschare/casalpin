@@ -1,13 +1,13 @@
 <!-- portfolio -->
 <?php $counter = -1; foreach ($this->articles as $article) : $counter++; ?>
-	<?php echo $article->pagetitle; ?>
+	<?php echo $article->headline; ?><br /><br />
     <?php $images = unserialize($article->bild); ?>
 	<!-- <a class="open_fancybox<?php echo $counter; ?>" href="image/800/600/0/<?php echo $article->idart; ?>/<?php echo $article->mainimage; ?>" title="<?php echo $article->pagetitle; ?>" alt="<?php echo $article->pagetitle; ?>"><img src="/image/120/120/1/<?php echo $article->idart; ?>/<?php echo $article->mainimage; ?>" width="120" height="120"></a> -->
 <ul class="small-block-grid-1 large-block-grid-3">
 
     <?php foreach ($images as $image) : ?>
 		
-		<li><a class="fancybox" href="image/800/600/0/<?php echo $article->idart; ?>/<?php echo $image; ?>" data-fancybox-group="gallery" title="<?php echo $article->pagetitle; ?>" alt="<?php echo $article->pagetitle; ?>"><img src="/image/200/200/1/<?php echo $article->idart; ?>/<?php echo $image; ?>"></a></li>
+		<li><a class="fancybox" href="image/800/600/0/<?php echo $article->idart; ?>/<?php echo $image; ?>" data-fancybox-group="gallery" title="<?php echo $article->pagetitle; ?>" alt="<?php echo $article->medianame; ?>"><img src="/image/200/200/1/<?php echo $article->idart; ?>/<?php echo $image; ?>"></a></li>
 		
 		
 		
