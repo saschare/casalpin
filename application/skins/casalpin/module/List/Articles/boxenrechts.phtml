@@ -5,7 +5,7 @@
 <?php $idcat = Aitsu_Util::getIdCatByIdArt($article->idart); ?>
 	<div class="large-12 columns alpha" style="padding: 0;">
 	<div class="large-12 columns" style="background: #442102; padding: 5px; color: white; "><?php echo $article->articletitle; ?></div>
-    <div class="large-12 columns" style="min-height: 100px; background: #d7d7d7; margin-bottom: 20px; color: white; ">
+    <div class="large-12 columns" style="min-height: 100px; background: #d7d7d7; margin-bottom: 20px; color: white; url(/image/320/320/2/<?php echo $article->idart; ?>/<?php echo $article->mainimage; ?>) no-repeat ">
        <span style="color: white; font-family: arial; font-size: 14px; font-weight: bold; "><?php echo $article->teasertitle; ?></span>
 	   <!-- <?php echo $article->content; ?> -->
 	</div>
