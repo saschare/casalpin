@@ -1,11 +1,18 @@
 <!-- Head-Banner -->
 <div class="hide-for-small row">
-    <div id="cycler">
+<?php if (count($this->selectedImages) > 1) : ?>
+
+ <div id="cycler">
         <?php foreach ($this->selectedImages as $image) : $counter++; ?>
 		<img <?php if ($counter == 1): ?>class="active"<?php endif; ?> src="<?php echo Aitsu_Registry::get()->config->sys->webpath; ?>image/1280/960/2/<?php echo (empty($image->idart) ? 'null' : $image->idart); ?>/<?php echo $image->filename; ?>">
         <?php endforeach; ?>
-    </div>
 </div>
 
-
-
+<?php else: ?>
+<div id="">
+        <?php foreach ($this->selectedImages as $image) : $counter++; ?>
+		<img src="<?php echo Aitsu_Registry::get()->config->sys->webpath; ?>image/1280/960/2/<?php echo (empty($image->idart) ? 'null' : $image->idart); ?>/<?php echo $image->filename; ?>">
+        <?php endforeach; ?>
+</div>
+<?php endif; ?>
+</div>
