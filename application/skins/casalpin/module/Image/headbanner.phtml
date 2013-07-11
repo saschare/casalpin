@@ -1,14 +1,11 @@
 <!-- Head-Banner -->
 <div class="hide-for-small row">
-    <div id="featured" data-orbit data-options="timer_speed:2500; bullets:false;">
-        <?php foreach ($this->selectedImages as $image) : ?>
-            <?php
-            $image = (object) $image;
-
-            $this->attributes->alt = $image->subline;
-
-            echo Moraso_Html_Helper_Image::getHtml($image->idart, $image->filename, $this->width, $this->height, $this->render, $this->attributes);
-            ?>
+    <div id="cycler">
+        <?php foreach ($this->selectedImages as $image) : $counter++; ?>
+		<img <?php if ($counter == 1): ?>class="active"<?php endif; ?> src="<?php echo Aitsu_Registry::get()->config->sys->webpath; ?>image/1280/960/2/<?php echo (empty($image->idart) ? 'null' : $image->idart); ?>/<?php echo $image->filename; ?>">
         <?php endforeach; ?>
     </div>
 </div>
+
+
+
