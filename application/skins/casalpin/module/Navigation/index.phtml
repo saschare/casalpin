@@ -1,14 +1,10 @@
-<nav class="top-bar">
+<nav class="top-bar" role="navigation">
     <ul class="title-area">
-        <li class="name hide-for-medium-up">
-            <h1><a href="{ref:idcat-0}">CASALPIN</a></h1>
-        </li>
-        <li class="toggle-topbar menu-icon">
-            <a href="#"><span></span></a>
-        </li>
+        <li class="name hide-for-medium-up"><h1><a href="{ref:idcat-0}">CASALPIN</a></h1></li>
+        <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
     </ul>
 
-    <section class="menu">
+    <section class="top-bar-section">
 	    <ul class="left">
 			<?php foreach ($this->nav as $nav) : ?>
 			<li class="<?php if($nav['isCurrent']) : ?>active<?php endif;?><?php If($nav['idcat'] === '16' || $nav['idcat'] === '19') :?> divider<?php endif;?>"><a href="{ref:idcat-<?php echo $nav['idcat']; ?>}" title="<?php echo $nav['name']; ?>"><?php echo $nav['name']; ?></a><li>
