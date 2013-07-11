@@ -3,13 +3,13 @@
 <div class="row">
 <?php foreach ($this->articles as $article) : ?>
 <?php $idcat = Aitsu_Util::getIdCatByIdArt($article->idart); ?>
-<a href="{ref:idcat-<?php echo $idcat; ?>}" target="_self">
+<a href="{ref:idcat-<?php echo $idcat; ?>}" target="_self" style="text-decoration: none;">
 <div class="" style="min-height: 155px; margin-bottom: 10px;" >
 	<div class="large-12 columns" style="background: #442102; padding: 5px; color: white; "><?php echo $article->articletitle; ?></div>
 
 
 <img src="/image/320/320/2/<?php echo $article->idart; ?>/<?php echo $article->mainimage; ?>" />
-	<span style="bottom: 20px; left: 10px; position: absolute; padding: 0 10px; color: #fff; color: white; text-shadow: 0.05em 0.05em 0.1em #333; font-size: 1.0em;"><?php echo $article->teasertitle; ?></span>
+	<span style="bottom: 30px; left: 10px; position: relative; padding: 0px; color: #fff; color: white; text-shadow: 0.05em 0.05em 0.1em #333; font-size: 1.0em;"><?php echo $article->teasertitle; ?></span>
 
 </div>	  
 </a>
