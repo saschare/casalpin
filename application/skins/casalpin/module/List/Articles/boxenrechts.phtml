@@ -1,15 +1,18 @@
 <!-- boxenrechts -->
-<div class="row">
 <?php if (count($this->articles) > 0): ?>
+<div class="row">
 <?php foreach ($this->articles as $article) : ?>
 <?php $idcat = Aitsu_Util::getIdCatByIdArt($article->idart); ?>
-	<div class="large-12 columns alpha" style="padding: 0;">
+<a href="{ref:idcat-<?php echo $idcat; ?>}" target="_self">
+<div class="" style="min-height: 155px; margin-bottom: 10px;" >
 	<div class="large-12 columns" style="background: #442102; padding: 5px; color: white; "><?php echo $article->articletitle; ?></div>
-    <div class="large-12 columns" style="min-height: 100px; background: #d7d7d7; margin-bottom: 20px; color: white; background: url(/image/320/320/2/<?php echo $article->idart; ?>/<?php echo $article->mainimage; ?>) no-repeat ">
-       <span style="color: white; font-family: arial; font-size: 14px; font-weight: bold; "><?php echo $article->teasertitle; ?></span>
-	   <!-- <?php echo $article->content; ?> -->
-	</div>
-	</div>
+
+
+<img src="/image/320/320/2/<?php echo $article->idart; ?>/<?php echo $article->mainimage; ?>" />
+	<span style="bottom: 20px; left: 10px; position: absolute; padding: 0 10px; color: #fff; color: white; text-shadow: 0.05em 0.05em 0.1em #333; font-size: 1.0em;"><?php echo $article->teasertitle; ?></span>
+
+</div>	  
+</a>
 <?php endforeach; ?>
 </div>
 <?php else: ?>
