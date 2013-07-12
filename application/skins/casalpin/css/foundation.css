@@ -2750,12 +2750,11 @@ form.custom {
     display: block;
     width: 100%;
     color: #666;
-    padding: 5px 15px;
+    padding: 5px 20px 5px 0;
     padding-left: 15px;
     font-size: 0.95em;
     font-weight: normal;
     background: none;
-    border-bottom: 1px solid #999; 
     text-decoration: none;}
     .top-bar-section ul li > a.hover {
       background: #090909;
