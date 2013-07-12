@@ -3,7 +3,7 @@
 <div class="row">
 <?php foreach ($this->articles as $article) : ?>
 <?php $idcat = Aitsu_Util::getIdCatByIdArt($article->idart); ?>
-<a href="{ref:idcat-<?php echo $idcat; ?>}" target="_self" style="text-decoration: none;">
+<a href="{ref:idart-<?php echo $idart; ?>}" target="_self" style="text-decoration: none;">
 <div class="" style="min-height: 155px; margin-bottom: 10px;" >
 	<div class="large-12 columns" style="background: #442102; padding: 5px; color: white; "><?php echo $article->articletitle; ?></div>
 
