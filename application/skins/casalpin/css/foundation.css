@@ -2754,7 +2754,8 @@ form.custom {
     padding-left: 15px;
     font-size: 0.95em;
     font-weight: normal;
-    background: #222222; 
+    background: none;
+    border-bottom: 1px solid #999; 
     text-decoration: none;}
     .top-bar-section ul li > a.hover {
       background: #090909;
