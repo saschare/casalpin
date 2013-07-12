@@ -1,0 +1,10 @@
+<!-- Grid -->
+<ul class="small-block-grid-2 large-block-grid-3">
+<?php foreach ($this->selectedImages as $image) : ?>
+	<?php
+    	$image = (object) $image;
+        $this->attributes->alt = $image->subline;
+	?>
+	<li><a class="fancybox" href="<?php echo Aitsu_Registry::get()->config->sys->webpath; ?>image/800/600/1/<?php echo (empty($image->idart) ? 'null' : $image->idart); ?>/<?php echo $image->filename; ?>" data-fancybox-group="gallery" title="<?php echo $article->pagetitle; ?>" alt="<?php echo $article->pagetitle; ?>"><img src="<?php echo Aitsu_Registry::get()->config->sys->webpath; ?>image/200/200/1/<?php echo (empty($image->idart) ? 'null' : $image->idart); ?>/<?php echo $image->filename; ?>"></a></li>
+ <?php endforeach; ?>
+</ul>
