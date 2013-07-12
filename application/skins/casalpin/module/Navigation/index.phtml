@@ -7,14 +7,14 @@
     <section class="top-bar-section">
 	    <ul class="left">
 			<?php foreach ($this->nav as $nav) : ?>
-			<li class="<?php if($nav['isCurrent']) : ?>active<?php endif;?><?php If($nav['idcat'] === '16' || $nav['idcat'] === '19') :?> divider<?php endif;?>"><a href="{ref:idcat-<?php echo $nav['idcat']; ?>}" title="<?php echo $nav['name']; ?>"><?php echo $nav['name']; ?></a>
+			<li class="<?php if($nav['isCurrent']) : ?>active<?php endif;?><?php if($nav['isParrent']) : ?> botspace<?php endif;?><?php If($nav['idcat'] === '16' || $nav['idcat'] === '19') :?> divider<?php endif;?>"><a href="{ref:idcat-<?php echo $nav['idcat']; ?>}" title="<?php echo $nav['name']; ?>"><?php echo $nav['name']; ?></a>
 			 <?php if ($nav['isCurrent'] || $nav['isParent']) : ?>
       <script type="application/x-aitsu" src="ArticleNavigation:idcat<?php echo $nav->idcat; ?>-l1">
       	idcat=<?php echo $nav->idcat; ?>
       </script>      
 	  <?php endif; ?>
 			
-			<li>
+			</li>
 			<?php endforeach; ?>
 	    </ul>
     </section>
