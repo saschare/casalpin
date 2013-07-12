@@ -2738,22 +2738,24 @@ form.custom {
     background: #fff;
     font-size: 16px;
     margin: 0; }
-  .top-bar-section .divider,
   .top-bar-section [role="separator"] {
     border-bottom: solid 1px #2b2b2b;
     border-top: solid 1px black;
     clear: both;
     height: 1px;
     width: 100%; }
+  .top-bar-section .divider {
+    margin-bottom: 20px; }  
   .top-bar-section ul li > a {
     display: block;
     width: 100%;
-    color: white;
-    padding: 12px 0 12px 0;
+    color: #666;
+    padding: 5px 15px;
     padding-left: 15px;
-    font-size: 0.8125em;
-    font-weight: bold;
-    background: #222222; }
+    font-size: 0.95em;
+    font-weight: normal;
+    background: #222222; 
+    text-decoration: none;}
     .top-bar-section ul li > a.hover {
       background: #090909;
       color: white; }
@@ -2775,8 +2777,7 @@ form.custom {
       .top-bar-section ul li > a.button.alert.hover {
         background: #970b0e; }
   .top-bar-section ul li.active > a {
-    background: #090909;
-    color: white; }
+    color: rgb(173, 139, 76); }
   .top-bar-section .has-form {
     padding: 15px; }
   .top-bar-section .has-dropdown {
@@ -2876,9 +2877,9 @@ form.custom {
         .top-bar-section ul li .js-generated {
           display: none; }
     .top-bar-section li a:not(.button) {
-      padding: 0 15px;
-      line-height: 45px;
-      background: #111111; }
+      
+      
+      background: none; }
       .top-bar-section li a:not(.button).hover {
         background: black; }
     .top-bar-section .has-dropdown > a {
@@ -2921,7 +2922,7 @@ form.custom {
       .top-bar-section .dropdown li .dropdown {
         left: 100%;
         top: 0; }
-    .top-bar-section > ul > .divider, .top-bar-section > ul > [role="separator"] {
+     .top-bar-section > ul > [role="separator"] {
       border-bottom: none;
       border-top: none;
       border-right: solid 1px #2b2b2b;
@@ -2929,6 +2930,10 @@ form.custom {
       clear: none;
       height: 45px;
       width: 0px; }
+     .top-bar-section > ul > .divider [role="separator"] {
+      clear: none;
+      margin-bottom: 45px;
+      width: 0px; }      
     .top-bar-section .has-form {
       background: #111111;
       padding: 0 15px;
