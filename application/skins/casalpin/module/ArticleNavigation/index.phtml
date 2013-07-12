@@ -1,5 +1,5 @@
-<ul style="margin: 0 0 20px 15px;  ">
+<ul >
 <?php foreach ($this->article as $article) : ?>
-  <li <?php if($this->idart == $article->idart) : ?><?php endif; ?>><a<?php if($this->idart == $article->idart) : ?> class="active" <?php else : ?> class=""<?php endif; ?> title="<?php echo $article->articletitle; ?>" href="{ref:idart-<?php echo $article->idart; ?>}" ><?php echo $article->articletitle; ?></a></li>
+  <li style="margin: 0 0 0 15px;" <?php if($this->idart == $article->idart) : ?><?php endif; ?>><a<?php if($this->idart == $article->idart) : ?> class="active" <?php else : ?> class=""<?php endif; ?> title="<?php echo $article->articletitle; ?>" href="{ref:idart-<?php echo $article->idart; ?>}" ><?php echo $article->articletitle; ?></a></li>
 <?php endforeach; ?>
 </ul>
